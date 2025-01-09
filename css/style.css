@@ -1,0 +1,158 @@
+ 
+@font-face {
+      font-family: 'Helvetica Neue Condensed';
+      src: url('./HelveticaNeueCondensedBlack.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+    }
+
+#hero {
+            height:100vh;
+            width:100%;
+            background:red;
+            display:flex;
+}
+
+
+#hero::after {
+      width:100%;
+      height:100%;
+      content: '';
+      position:absolute;
+      z-index:1;
+      top:0;
+      left:0;
+      background:rgba(0,0,0,0.5)
+}
+
+
+#hero video {
+      align-items:center;
+            justify-content: center;
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:0;
+      object-fit:cover;
+      font-family:'object-fit: cover';
+}
+
+.logo img {
+      width: 47px;
+    }  
+
+#hero .top-bar {
+
+      position:absolute;
+      padding: 20px 20px;
+      z-index:20;
+}
+
+.bottom-strip {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: black;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Helvetica Neue Condensed', sans-serif;
+      z-index: 10;
+      }
+  
+    .moving-text {
+      display: flex;
+      animation: move 24s linear infinite;
+    }
+    
+    .moving-text span {
+      color: white;
+      font-size: 35px;  
+      font-weight: bold;
+      margin: 0 20px;
+      white-space: nowrap;
+    }
+  
+    @keyframes move {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(-100%);
+      }
+  }
+.footer {
+      background-color: #000; /* Black background */
+      color: #fff; /* White text */
+      text-align: center;
+      padding: 20px 10px 20px 10px;
+      margin: 0;
+    }
+    
+    .footer .full-logo img {
+      max-width: 150px; /* Adjust as needed */
+      margin-bottom: 10px;
+    }
+    
+    .regtext {
+      font-family: 'Helvetica Neue Condensed', sans-serif;
+      text-transform: uppercase;
+      font-size: 20px;
+      margin: 10px 0px 1px 0px;
+    }
+
+    .redtxt {
+      font-family: 'Helvetica Neue Condensed', sans-serif;
+      text-transform: uppercase;
+      font-size: 22px;
+      margin: 10px 0px 0px 0px;
+      color: #d43026;
+    }
+
+    .bottomtxt {
+      font-family: 'Helvetica Neue Condensed', sans-serif;
+      text-transform: uppercase;
+      font-size: 20px;
+      margin: 10px 0px 20px 0px;
+    }
+
+@media screen and (min-width:768px)
+{
+      #hero .caption h1 {
+            font-size:2.5rem;
+      }
+
+      #hero .caption h2 {
+            font-size:1.75rem;
+      }
+}
+
+
+
+
+@media screen and (min-width:992px)
+{
+      #hero .caption h1 {
+            font-size:3rem;
+      }
+
+      #hero .caption h2 {
+            font-size:2rem;
+      }
+}
+
+
+
+@media screen and (min-width:1200px)
+{
+      #hero .caption h1 {
+            font-size:4rem;
+      }
+
+      #hero .caption h2 {
+            font-size:2.5rem;
+      }
+}
