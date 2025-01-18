@@ -101,7 +101,7 @@ a {
   
     .moving-text {
       display: flex;
-      animation: move 24s linear infinite;
+      animation: move 35s linear infinite;
     }
     
     .moving-text span {
@@ -114,10 +114,57 @@ a {
   
     @keyframes move {
       0% {
-          transform: translateX(100%);
+          transform: translateX(0%);
       }
       100% {
           transform: translateX(-100%);
+      }
+  }
+
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    height: 8vh;
+    user-select: none;
+    gap: 2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    background-color: black;
+         /*transform: skewY(-3deg); */
+     /*transform: rotate(-5deg) translateY(-30px) translateX(50px);*/
+  }
+  
+  .marquee__group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    min-width: 100%;
+    animation: scroll 15s linear infinite reverse;
+  }
+  
+  .marquee__group span {
+    color: white;
+    font-size: 5vw;
+    font-weight: 800;
+    white-space: nowrap;
+    font-family: 'Helvetica Neue Condensed', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 2rem));
+    }
+  }
+  
+  @media only screen and (min-width: 360px) {
+      .marquee__group span {
+          font-size: 6.5vw;
       }
   }
 
@@ -132,7 +179,8 @@ a {
     
     .footer .full-logo img {
       max-width: 150px;
-      margin-bottom: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
     
     .regtext {
@@ -164,29 +212,4 @@ a {
             padding-right: 2rem;
       }
 }
-
-/* .marquee {
-      --gap: 1rem;
-      display: flex;
-      overflow: hidden;
-      user-select: none;
-      gap: var(--gap);
-    }
-    
-    .marquee__content {
-      flex-shrink: 0;
-      display: flex;
-      justify-content: space-around;
-      min-width: 100%;
-      gap: var(--gap);
-    } */
-
-    @keyframes scroll {
-      from {
-        transform: translateX(0%);
-      }
-      to {
-        transform: translateX(calc(-100% - var(--gap)));
-      }
-    }
     
